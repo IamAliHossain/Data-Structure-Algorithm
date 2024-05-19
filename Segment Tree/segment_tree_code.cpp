@@ -1,11 +1,12 @@
 #include<bits/stdc++.h>
 using namespace std;
-const int N=1e5+7;
+const int N=3e5+7;
 
-int a[N];
-int st[N*3];
+typedef long long ll;
+ll a[N];
+ll st[N*4];
 
-void init(int node, int b, int e){  /*node start from index 1, b-e means ei range e achi ekhon*/
+void build_tree(int node, int b, int e){  /*node start from index 1, b-e means ei range e achi ekhon*/
     if(b == e){
         st[node] = a[b] ;
         return ;
@@ -13,17 +14,17 @@ void init(int node, int b, int e){  /*node start from index 1, b-e means ei rang
     int left = node*2;
     int right = node*2 + 1 ;
     int mid = (b+e) / 2 ;
-    init(left, b, mid);
-    init(right, mid+1, e);
+    build_tree(left, b, mid);
+    build_tree(right, mid+1, e);
+
     st[node] = st[left] + st[right] ;
 }
 
 /* if there is query for range sum then */
 
-int query(int node, int b, int e, int l, int r){ /* l to j er sum korbe*/
+ll query(int node, int b, int e, int l, int r){ /* l to j er sum korbe*/
 
-
-    if(l > e || r < b){ /* range er baire chole geche */
+    if(e > l || b > r ){ /* range er baire chole geche */
         return 0 ;
     }
 
@@ -56,7 +57,7 @@ void point_update(int node, int b, int e, int pos, int val){
     point_update(left, b, mid, pos, val);
     point_update(right, mid+1, e, pos, val);
 
-    st[node] = min(st[left], st[right]);
+    st[node] = (st[left] + st[right]);
 }
 
 int main(){
@@ -68,7 +69,8 @@ int main(){
         for(int i=1; i<=n; i++){
             cin >> a[i];
         }
-        init(1, 1 , n);
+        build_tree(1, 1 , n);
+
         while(q--){
             int l, r; cin >> l >> r;
             cout << query(1, 1, n, l, r) << endl;
