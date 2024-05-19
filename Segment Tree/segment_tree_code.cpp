@@ -23,8 +23,8 @@ void build_tree(int node, int b, int e){  /*node start from index 1, b-e means e
 /* if there is query for range sum then */
 
 ll query(int node, int b, int e, int l, int r){ /* l to j er sum korbe*/
-
-    if(e > l || b > r ){ /* range er baire chole geche */
+    
+    if(e < l || b > r ){ /* range er baire chole geche */
         return 0 ;
     }
 
