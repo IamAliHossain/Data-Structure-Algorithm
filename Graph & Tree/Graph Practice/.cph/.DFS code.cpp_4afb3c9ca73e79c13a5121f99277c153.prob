@@ -1,0 +1,1 @@
+{"name":"Local: DFS code","url":"d:\\Code on SublimeEditor\\Graph Practice\\DFS code.cpp","tests":[{"id":1681030754925,"input":"1\n6 9\n1 3\n1 5\n3 5\n3 4\n3 6\n3 2\n2 6\n4 6\n5 6","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Code on SublimeEditor\\Graph Practice\\DFS code.cpp","group":"local","local":true}

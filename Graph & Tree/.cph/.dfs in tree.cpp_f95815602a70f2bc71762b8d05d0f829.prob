@@ -1,0 +1,1 @@
+{"name":"Local: dfs in tree","url":"d:\\Code on SublimeEditor\\Graph & Tree\\dfs in tree.cpp","tests":[{"id":1681899778757,"input":"13\n1 2\n1 3\n1 13\n2 5\n3 4\n5 6\n5 7\n5 8\n8 12\n4 9\n4 10\n10 11","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Code on SublimeEditor\\Graph & Tree\\dfs in tree.cpp","group":"local","local":true}
