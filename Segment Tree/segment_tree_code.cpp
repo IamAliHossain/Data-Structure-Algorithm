@@ -27,7 +27,7 @@ int query(int node, int b, int e, int i, int j){ /* i to j er sum korbe*/
         return 0 ;
     }
 
-    if(b >= i and e <= j){ /* ermane relevant(valid) range */
+    if(b >= i and j <= e){ /* ermane relevant(valid) range */
         return tree[node];
     }
     int left = node * 2;
