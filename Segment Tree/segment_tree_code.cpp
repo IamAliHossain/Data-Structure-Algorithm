@@ -87,7 +87,7 @@ void range_update(int node, int b, int e, int l, int r, int val){
         return;
     }
     if(b>= l and e <= r){ // complete overlap
-        st[node] = a[b] + val * (b - e + 1); // (total children * val) add hobe
+        st[node] += (val * (b - e + 1)); // (total children * val) add hobe
         
         if(b != e){ // left & right children e propagate kora lagbe
             int left = (node << 1);
